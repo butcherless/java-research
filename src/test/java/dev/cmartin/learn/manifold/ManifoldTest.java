@@ -20,7 +20,8 @@ public class ManifoldTest {
         var text = String.format("Manifold tuple: %s - %d", tuple.name, tuple.age);
 
         // then
-        assertThat(text).isEqualTo("Manifold tuple: " + developerName + " - " + developerAge);
+        assertThat(text)
+                .isEqualTo("Manifold tuple: " + developerName + " - " + developerAge);
     }
 
     @Test
@@ -32,7 +33,8 @@ public class ManifoldTest {
         var result = text.beStrong();
 
         // then
-        assertThat(result).isEqualTo("I will never be a soft string again: " + text);
+        assertThat(result)
+                .isEqualTo("I will never be a soft string again: " + text);
     }
 
     @Test
@@ -79,7 +81,8 @@ public class ManifoldTest {
         // when
         var resulta = numbers.map(n -> n * 2).toList();
         // then
-        assertThat(resulta).containsExactly(2, 4, 6, 8, 10);
+        assertThat(resulta)
+                .containsExactly(2, 4, 6, 8, 10);
     }
 
     @Test
@@ -89,7 +92,8 @@ public class ManifoldTest {
         // when
         var result = emptyList.isNullOrEmpty();
         // then
-        assertThat(result).isTrue();
+        assertThat(result)
+                .isTrue();
     }
 
     @Test
@@ -99,7 +103,8 @@ public class ManifoldTest {
         // when
         var result = nullList.isNullOrEmpty();
         // then
-        assertThat(result).isTrue();
+        assertThat(result).
+                isTrue();
     }
 
     @Test
@@ -109,6 +114,19 @@ public class ManifoldTest {
         // when
         var result = numbers.isNotEmpty();
         // then
-        assertThat(result).isTrue();
+        assertThat(result)
+                .isTrue();
+    }
+
+    @Test
+    void shouldTestStringInterpolation() {
+        // given
+        var name = "Softman";
+        var age = 25;
+        // when
+        var result = "Hello, my name is ${name} and I am ${age} years old";
+        // then
+        assertThat(result)
+                .isEqualTo("Hello, my name is Softman and I am 25 years old");
     }
 }
