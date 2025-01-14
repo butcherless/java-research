@@ -9,6 +9,9 @@ public class Country {
     private Integer population;
     private Double extension;
 
+    public String getName() {
+        return name;
+    }
 
     public String getCode() {
         return code;

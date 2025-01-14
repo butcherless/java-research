@@ -68,8 +68,8 @@ public class ManifoldTest {
         var country = new Country("Spain", "ES", (population:47_000_000, extension:505_992.0));
 
         // when & then
-        //assertThat(country.name).isEqualTo("Spain");
-        //assertThat(country.code).isEqualTo("ES");
+        assertThat(country.name).isEqualTo("Spain");
+        assertThat(country.code).isEqualTo("ES");
         //assertThat(country.population).isEqualTo(47_000_000);
         //assertThat(country.extension).isEqualTo(505_992.0);
     }
@@ -79,9 +79,9 @@ public class ManifoldTest {
         //given
         var numbers = List.of(1, 2, 3, 4, 5);
         // when
-        var resulta = numbers.map(n -> n * 2).toList();
+        var results = numbers.map(n -> n * 2).toList();
         // then
-        assertThat(resulta)
+        assertThat(results)
                 .containsExactly(2, 4, 6, 8, 10);
     }
 
