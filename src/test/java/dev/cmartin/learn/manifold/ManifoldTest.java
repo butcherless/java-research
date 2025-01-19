@@ -9,6 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ManifoldTest {
 
+    /*
     @Test
     void shouldTestTuple() {
         // given
@@ -129,4 +130,6 @@ public class ManifoldTest {
         assertThat(result)
                 .isEqualTo("Hello, my name is Softman and I am 25 years old");
     }
+
+     */
 }

@@ -1,16 +1,16 @@
 package javapocs.extensions.java.util.Collection;
 
-import manifold.ext.rt.api.Extension;
-import manifold.ext.rt.api.This;
+//import manifold.ext.rt.api.Extension;
+//import manifold.ext.rt.api.This;
 
 import java.util.Collection;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-@Extension
+//@Extension
 public class CollectionExtensions {
-    public static <E, R> Stream<R> map(@This Collection<E> thiz, Function<? super E, R> mapper) {
+/*    public static <E, R> Stream<R> map(@This Collection<E> thiz, Function<? super E, R> mapper) {
         return thiz.stream().map(mapper);
     }
 
@@ -22,4 +22,6 @@ public class CollectionExtensions {
         return !isNullOrEmpty(thiz);
     }
 
+
+ */
 }

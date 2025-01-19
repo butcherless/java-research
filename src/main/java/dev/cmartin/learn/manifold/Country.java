@@ -1,7 +1,7 @@
 package dev.cmartin.learn.manifold;
 
-import manifold.ext.props.rt.api.val;
-import manifold.ext.rt.api.Structural;
+//import manifold.ext.props.rt.api.val;
+//import manifold.ext.rt.api.Structural;
 
 public class Country {
     private String name;
@@ -24,7 +24,7 @@ public class Country {
     public Double getExtension() {
         return extension;
     }
-
+/*
     @Structural
     interface $country {
         @val
@@ -39,4 +39,6 @@ public class Country {
         this.population = options.population;
         this.extension = options.extension;
     }
+
+ */
 }

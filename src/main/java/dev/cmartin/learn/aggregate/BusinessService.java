@@ -7,7 +7,11 @@ import java.util.UUID;
 
 public interface BusinessService {
 
-    record Order(UUID id, UUID supplierId, String orderNumber) {
+    record Order(
+            UUID id,
+            UUID supplierId,
+            String orderNumber
+    ) {
     }
 
     record MailInfo(String from, String to, String subject, String body) {
