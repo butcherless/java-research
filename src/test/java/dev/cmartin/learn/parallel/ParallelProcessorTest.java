@@ -1,5 +1,6 @@
 package dev.cmartin.learn.parallel;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -7,8 +8,10 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static org.assertj.core.api.Assertions.assertThat;
 
-class ErrorHandlerTest {
+
+class ParallelProcessorTest {
 
     ParallelProcessor processor = new ParallelProcessor();
 
@@ -17,7 +20,7 @@ class ErrorHandlerTest {
 
         var ids = generateUUIDs(32);
         var results = processor.processPar(ids);
-        var x = 0;
+        assertThat(results.size()).isEqualTo(ids.size());
     }
 
 

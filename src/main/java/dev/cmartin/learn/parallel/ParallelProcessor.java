@@ -11,6 +11,8 @@ import java.util.UUID;
 
 public class ParallelProcessor {
 
+    private static final Integer MAX_DELAY = 2;
+
     public record ProcessResult(
             UUID id,
             Integer numberCount,
@@ -32,7 +34,7 @@ public class ParallelProcessor {
     private Mono<ProcessResult> processId(final UUID id) {
         return Mono.just(id)
                 .log()
-                .delayElement(Duration.ofSeconds(this.genDelay(2)))
+                .delayElement(Duration.ofSeconds(this.genDelay(MAX_DELAY)))
                 .map(UUID::toString)
                 .flatMap(idString -> {
                     var numberCount = this.countDigits(idString);
