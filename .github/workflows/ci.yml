@@ -18,22 +18,17 @@ jobs:
       - uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
-          java-version: '21'
-          cache: 'maven'
-      - name: Cache Maven dependencies
+          java-version: '25'
+      - name: Cache Maven dependencies and build outputs
         uses: actions/cache@v5
         with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          path: |
+            ~/.m2/repository
+            ~/.m2/build-cache
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml', '.mvn/extensions.xml', '.mvn/maven-build-cache-config.xml') }}
           restore-keys: ${{ runner.os }}-maven-
-      - name: compile
-        run: ./mvnw -V clean compile
-      - name: test
-        run: ./mvnw -V test
-#      - name: integration-test
-#        run: ./mvnw -V integration-test -Dunit.test.skip
-      - name: package
-        run: ./mvnw -V package -DskipTests
+      - name: Build and verify
+        run: ./mvnw -B -V clean verify
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
         env:
